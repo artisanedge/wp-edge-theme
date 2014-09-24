@@ -124,3 +124,13 @@ require get_template_directory() . '/inc/jetpack.php';
  * Custom functions for bootstrap3
  */
 require get_template_directory() . '/inc/wp-bootstrap.php';
+
+/**
+ * Custom functions in edge
+ */
+require get_template_directory() . '/inc/edge-extras.php';
+
+/**
+ * Custom widgets in edge
+ */
+require get_template_directory() . '/inc/widgets.php';
