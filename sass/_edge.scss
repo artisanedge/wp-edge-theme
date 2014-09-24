@@ -1,0 +1,32 @@
+article {
+	
+	.entry-header {
+		margin-bottom: 1em;
+
+		h2 {
+		}
+		.entry-meta {
+		}
+	}
+
+	.entry-content {
+		.thumbnail {
+			text-align: center;
+			margin-right: auto;
+			margin-left: auto;
+		}
+	}
+
+	.entry-footer {
+		margin-top: 1em;
+	}
+
+	.posted-on,
+	.byline,
+	.cat-links,
+	.tags-links,
+	.comments-link {
+		display: inline-block;
+		margin-right: 1em;
+	}
+}

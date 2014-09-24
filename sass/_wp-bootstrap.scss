@@ -11,3 +11,19 @@ body.admin-bar {
 		top: 32px;
 	}
 }
+
+@media ( max-width: 782px ) {
+	body.admin-bar {
+		.navbar-fixed-top {
+			top: 46px;
+		}
+	}
+}
+
+@media ( max-width: 600px ) {
+	body.admin-bar {
+		.navbar-fixed-top {
+			position: absolute;
+		}
+	}
+}

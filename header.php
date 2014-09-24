@@ -10,7 +10,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="<?php echo edge_get_viewport(); ?>">
+<meta name="viewport" content="<?php edge_viewport(); ?>">
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
@@ -30,4 +30,4 @@
 	<?php get_template_part( 'nav' ); ?>
 
 	<!-- Page Content -->
-	<div class="<?php echo edge_get_container_class(); ?>">
+	<div class="<?php edge_container_class(); ?>">

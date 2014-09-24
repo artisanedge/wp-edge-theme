@@ -1,18 +1,30 @@
 <?php
-if ( ! function_exists( 'edge_get_viewport' ) ) :
-function edge_get_viewport() {
+if ( ! function_exists( 'edge_viewport' ) ) :
+function edge_viewport() {
 	$viewport = "width=device-width, initial-scale=1";
 	if ( wp_is_mobile() ) {
 		$viewport = "width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1";
 	}
-	return $viewport;
+	echo $viewport;
 }
 endif;
 
-if ( ! function_exists( 'edge_get_container_class' ) ) :
-function edge_get_container_class() {
+if ( ! function_exists( 'edge_container_class' ) ) :
+function edge_container_class() {
 	// return 'container' or 'container-fluid'
-	return 'container';
+	echo 'container';
+}
+endif;
+
+if ( ! function_exists( 'edge_primary_class' ) ) :
+function edge_primary_class() {
+	echo 'col-md-8';
+}
+endif;
+
+if ( ! function_exists( 'edge_secondary_class' ) ) :
+function edge_secondary_class() {
+	echo 'col-md-4';
 }
 endif;
 
