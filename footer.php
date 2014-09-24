@@ -8,16 +8,8 @@
  */
 ?>
 
-	</div><!-- #content -->
-
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'edge' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'edge' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'edge' ), 'edge', '<a href="http://artisanedge.jp" rel="designer">Artisan Edge</a>' ); ?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+	</div>
+	<!-- /.container -->
 
 <?php wp_footer(); ?>
 

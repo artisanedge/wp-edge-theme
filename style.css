@@ -5332,6 +5332,16 @@ button.close {
 @media print {
   .hidden-print {
     display: none !important; } }
+body {
+  /*
+  	Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes.
+  	(Bootstrap3 default) .navbar min-height: 50px; margin-bottom: 20px;
+   */
+  padding-top: 70px; }
+
+body.admin-bar .navbar-fixed-top {
+  top: 32px; }
+
 /*--------------------------------------------------------------
 1.0 Reset
 --------------------------------------------------------------*/
