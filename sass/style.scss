@@ -47,6 +47,9 @@ and Blueprint http://www.blueprintcss.org/
 @import "variables-site/variables-site";
 @import "mixins/mixins-master";
 
+@import "bootstrap";
+@import "wp-bootstrap";
+
 /*--------------------------------------------------------------
 1.0 Reset
 --------------------------------------------------------------*/
