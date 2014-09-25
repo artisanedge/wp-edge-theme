@@ -42,7 +42,7 @@
 					) );
 				?>
 
-				<a class="btn btn-primary pull-right" href="<?php echo esc_url( get_permalink() ); ?>"><?php _e('Continue reading <span class="glyphicon glyphicon-chevron-right"></span>', 'edge') ?></a>
+				<a class="btn btn-primary btn-sm pull-right" href="<?php echo esc_url( get_permalink() ); ?>"><?php _e('Continue reading <span class="glyphicon glyphicon-chevron-right"></span>', 'edge') ?></a>
 			</div>
 		</div>
 	</div><!-- .entry-content -->
