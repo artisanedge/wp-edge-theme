@@ -100,13 +100,13 @@ function edge_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' == get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( __( ', ', 'edge' ) );
+		$categories_list = get_the_category_list( ', ' );
 		if ( $categories_list && edge_categorized_blog() ) {
 			printf( '<span class="cat-links"><i class="glyphicon glyphicon-folder-open"></i> ' . __( '%1$s', 'edge' ) . '</span>', $categories_list );
 		}
 
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', __( ', ', 'edge' ) );
+		$tags_list = get_the_tag_list( '', ', ' );
 		if ( $tags_list ) {
 			printf( '<span class="tags-links"><i class="glyphicon glyphicon-tags"></i> ' . __( '%1$s', 'edge' ) . '</span>', $tags_list );
 		}

@@ -27,3 +27,21 @@ body.admin-bar {
 		}
 	}
 }
+
+#respond {
+	@extend .well;
+
+	#commentform {
+		@extend .form-horizontal;
+
+		.form-submit {
+			@extend .row;
+			#submit {
+				@extend .col-sm-2;
+				@extend .col-sm-offset-3;
+				@extend .btn;
+				@extend .btn-primary;
+			}
+		}
+	}
+}

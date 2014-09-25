@@ -18,6 +18,8 @@ article {
 	}
 
 	.entry-footer {
+		@extend .well;
+		@extend .well-sm;
 		margin-top: 1em;
 	}
 

@@ -47,7 +47,7 @@
 		</div>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer well well-sm">
+	<footer class="entry-footer">
 		<?php edge_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
