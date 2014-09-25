@@ -13,8 +13,15 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<div class="row">
+
+		<!-- Blog Entries Column -->
+		<div id="primary" class="<?php edge_primary_class(); ?>">
+
+			<h1 class="page-header">
+				<?php bloginfo('name'); ?>
+				<small><?php bloginfo('description'); ?></small>
+			</h1>
 
 		<?php if ( have_posts() ) : ?>
 
@@ -31,7 +38,10 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php edge_paging_nav(); ?>
+			<!-- Pager -->
+			<div class="text-center">
+				<?php function_exists( 'wp_pagenavi' ) ? wp_pagenavi() : edge_paging_nav(); ?>
+			</div>
 
 		<?php else : ?>
 
@@ -39,8 +49,10 @@ get_header(); ?>
 
 		<?php endif; ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+		</div>
 
-<?php get_sidebar(); ?>
+		<?php get_sidebar(); ?>
+	</div>
+	<!-- /.row -->
+
 <?php get_footer(); ?>

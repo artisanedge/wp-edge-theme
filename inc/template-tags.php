@@ -79,17 +79,16 @@ function edge_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		_x( 'Posted on %s', 'post date', 'edge' ),
+		_x( '%s', 'post date', 'edge' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
 	$byline = sprintf(
-		_x( 'by %s', 'post author', 'edge' ),
+		_x( '%s', 'post author', 'edge' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>';
-
+	echo '<span class="posted-on"><i class="glyphicon glyphicon-time"></i> ' . $posted_on . '</span> <span class="byline"><i class="glyphicon glyphicon-user"></i> ' . $byline . '</span>';
 }
 endif;
 
@@ -101,25 +100,25 @@ function edge_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' == get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( __( ', ', 'edge' ) );
+		$categories_list = get_the_category_list( ', ' );
 		if ( $categories_list && edge_categorized_blog() ) {
-			printf( '<span class="cat-links">' . __( 'Posted in %1$s', 'edge' ) . '</span>', $categories_list );
+			printf( '<span class="cat-links"><i class="glyphicon glyphicon-folder-open"></i> ' . __( '%1$s', 'edge' ) . '</span>', $categories_list );
 		}
 
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', __( ', ', 'edge' ) );
+		$tags_list = get_the_tag_list( '', ', ' );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . __( 'Tagged %1$s', 'edge' ) . '</span>', $tags_list );
+			printf( '<span class="tags-links"><i class="glyphicon glyphicon-tags"></i> ' . __( '%1$s', 'edge' ) . '</span>', $tags_list );
 		}
 	}
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
+		echo '<span class="comments-link"><i class="glyphicon glyphicon-comment"></i> ';
 		comments_popup_link( __( 'Leave a comment', 'edge' ), __( '1 Comment', 'edge' ), __( '% Comments', 'edge' ) );
 		echo '</span>';
 	}
 
-	edit_post_link( __( 'Edit', 'edge' ), '<span class="edit-link">', '</span>' );
+	edit_post_link( __( 'Edit', 'edge' ), '<span class="edit-link"><i class="glyphicon glyphicon-pencil"></i> ', '</span>' );
 }
 endif;
 
