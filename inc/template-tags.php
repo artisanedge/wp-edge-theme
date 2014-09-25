@@ -18,18 +18,17 @@ function edge_paging_nav() {
 	}
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'edge' ); ?></h1>
-		<div class="nav-links">
-
-			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'edge' ) ); ?></div>
-			<?php endif; ?>
+		<ul class="nav-links pager">
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'edge' ) ); ?></div>
+			<li class="previous"><?php previous_posts_link( __( '<span class="glyphicon glyphicon-chevron-left"></span> Newer posts', 'edge' ) ); ?></li>
 			<?php endif; ?>
 
-		</div><!-- .nav-links -->
+			<?php if ( get_next_posts_link() ) : ?>
+			<li class="next"><?php next_posts_link( __( 'Older posts <span class="glyphicon glyphicon-chevron-right"></span>', 'edge' ) ); ?></li>
+			<?php endif; ?>
+
+		</ul><!-- .nav-links -->
 	</nav><!-- .navigation -->
 	<?php
 }
@@ -49,13 +48,12 @@ function edge_post_nav() {
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'edge' ); ?></h1>
-		<div class="nav-links">
+		<ul class="nav-links pager">
 			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span>&nbsp;%title', 'Previous post link', 'edge' ) );
-				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title&nbsp;<span class="meta-nav">&rarr;</span>', 'Next post link',     'edge' ) );
+				previous_post_link( '<li class="previous">%link</li>', _x( '<span class="glyphicon glyphicon-chevron-left"></span>&nbsp;%title', 'Previous post link', 'edge' ) );
+				next_post_link(     '<li class="next">%link</li>',     _x( '%title&nbsp;<span class="glyphicon glyphicon-chevron-right"></span>', 'Next post link',     'edge' ) );
 			?>
-		</div><!-- .nav-links -->
+		</ul><!-- .nav-links -->
 	</nav><!-- .navigation -->
 	<?php
 }
