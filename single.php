@@ -9,7 +9,7 @@ get_header(); ?>
 
 	<div class="row">
 
-		<!-- Blog Entries Column -->
+		<!-- Blog Entry Column -->
 		<div id="primary" class="<?php edge_primary_class(); ?>">
 
 		<?php while ( have_posts() ) : the_post(); ?>

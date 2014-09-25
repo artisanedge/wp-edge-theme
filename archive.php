@@ -11,7 +11,7 @@ get_header(); ?>
 
 	<div class="row">
 
-		<!-- Blog Entries Column -->
+		<!-- Archive Entries Column -->
 		<div id="primary" class="<?php edge_primary_class(); ?>">
 
 		<?php if ( have_posts() ) : ?>

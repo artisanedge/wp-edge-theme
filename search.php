@@ -9,7 +9,7 @@ get_header(); ?>
 
 	<div class="row">
 
-		<!-- Blog Entries Column -->
+		<!-- Search Results Column -->
 		<div id="primary" class="<?php edge_primary_class(); ?>">
 
 		<?php if ( have_posts() ) : ?>
