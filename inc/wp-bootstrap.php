@@ -41,7 +41,7 @@ function edge_comment( $comment, $args, $depth ) {
 ?>
 	<hr>
 	
-	<div id="comment-<?php comment_ID(); ?>" class="media <?php comment_class(); ?>">
+	<div id="comment-<?php comment_ID(); ?>" <?php comment_class( 'media' ); ?>>
 		<a class="pull-left" href="#">
 			<?php echo get_avatar( $comment, 32 ); ?>
 		</a>
