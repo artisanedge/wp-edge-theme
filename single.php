@@ -14,6 +14,8 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
+			<?php function_exists( 'edge_breadcrumb' ) ? edge_breadcrumb( $post ) : false; ?>
+
 			<?php get_template_part( 'content', 'single' ); ?>
 
 			<?php edge_post_nav(); ?>

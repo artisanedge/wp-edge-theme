@@ -13,9 +13,12 @@ get_header(); ?>
 		<div id="primary" class="<?php edge_primary_class(); ?>">
 
 		<?php if ( have_posts() ) : ?>
+			<?php $title = sprintf( __( 'Search Results for: %s', 'edge' ), '<span>' . get_search_query() . '</span>' ); ?>
+
+			<?php function_exists( 'edge_breadcrumb' ) ? edge_breadcrumb( false, $title ) : false; ?>
 
 			<header class="page-header">
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'edge' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<h1 class="page-title"><?php echo $title; ?></h1>
 			</header><!-- .page-header -->
 
 			<?php /* Start the Loop */ ?>
