@@ -1,7 +1,11 @@
 <?php
 function edge_breadcrumb( $post = false, $active = false ) {
 	$str = '<ol class="breadcrumb">';
-	$str .= '<li><a href="/">HOME</a></li>';
+	if ( is_multisite() ) {
+		$str .= '<li><a href="/">HOME</a></li>';
+	} else {
+		$str .= '<li><a href="' . get_bloginfo( 'url' ) . '">' . get_bloginfo( 'name' ) . '</a></li>';
+	}
 
 	$nodes = array();
 
