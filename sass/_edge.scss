@@ -10,6 +10,10 @@ article {
 	}
 
 	.entry-content {
+		font-size: 1.2em;
+		line-height: 1.8em;
+		overflow: hidden;
+
 		.thumbnail {
 			display: block;
 			text-align: center;
@@ -20,6 +24,7 @@ article {
 			@include img-responsive();
 			display: inline-block;
 			padding: $thumbnail-padding;
+			margin-top: $line-height-computed;
 			margin-bottom: $line-height-computed;
 			line-height: $line-height-base;
 			background-color: $thumbnail-bg;
@@ -42,5 +47,21 @@ article {
 	.comments-link {
 		display: inline-block;
 		margin-right: 1em;
+	}
+}
+
+.widget {
+	ul {
+		padding-left: 0;
+		list-style: none;
+
+		li {
+			margin-bottom: 0.8em;
+		}
+
+		ul {
+			padding-left: 20px;
+			margin-top: 0.8em;
+		}
 	}
 }

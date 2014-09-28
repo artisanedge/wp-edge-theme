@@ -7037,26 +7037,31 @@ body.admin-bar .navbar-fixed-top {
 
 article .entry-header {
   margin-bottom: 1em; }
-article .entry-content .thumbnail {
-  display: block;
-  text-align: center;
-  margin-right: auto;
-  margin-left: auto; }
-article .entry-content img {
-  display: block;
-  width: 100% \9;
-  max-width: 100%;
-  height: auto;
-  display: inline-block;
-  padding: 4px;
-  margin-bottom: 20px;
-  line-height: 1.42857;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  -webkit-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out; }
+article .entry-content {
+  font-size: 1.2em;
+  line-height: 1.8em;
+  overflow: hidden; }
+  article .entry-content .thumbnail {
+    display: block;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto; }
+  article .entry-content img {
+    display: block;
+    width: 100% \9;
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+    padding: 4px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height: 1.42857;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out; }
 article .entry-footer {
   margin-top: 1em; }
 article .posted-on,
@@ -7066,3 +7071,12 @@ article .tags-links,
 article .comments-link {
   display: inline-block;
   margin-right: 1em; }
+
+.widget ul {
+  padding-left: 0;
+  list-style: none; }
+  .widget ul li {
+    margin-bottom: 0.8em; }
+  .widget ul ul {
+    padding-left: 20px;
+    margin-top: 0.8em; }
