@@ -4,6 +4,23 @@ function edge_breadcrumb( $post = false, $active = false ) {
 	$str .= '<li><a href="/">HOME</a></li>';
 
 	$nodes = array();
+
+	if ( is_single() || is_category() ) {
+		$category = get_the_category();
+		$category = $category[0];
+		if ( is_single() ) {
+			$category_str = '<li><a href="' . get_category_link( $category->cat_ID ) . '">' . $category->cat_name . '</a></li>';
+			array_push( $nodes, $category_str );
+		}
+		$child_category = $category;
+		while ( $child_category->category_parent ) {
+			$parent_category = get_category( $child_category->category_parent, false );
+			$category_str = '<li><a href="' . get_category_link( $parent_category->cat_ID ) . '">' . $parent_category->cat_name . '</a></li>';
+			array_push( $nodes, $category_str );
+			$child_category = $parent_category;
+		}
+	}
+
 	if ( $post ) {
 		$child = $post;
 		while ( $child->post_parent ) {
@@ -13,9 +30,13 @@ function edge_breadcrumb( $post = false, $active = false ) {
 			array_push( $nodes, $parent_str );
 			$child = $parent;
 		}
-		while ( $node = array_pop( $nodes ) ) {
-			$str .= $node;
-		}
+	}
+
+	while ( $node = array_pop( $nodes ) ) {
+		$str .= $node;
+	}
+
+	if ( $post ) {
 		$str .= '<li class="active">' . $post->post_title . '</li>';
 	} else if ( $active ) {
 		$str .= '<li class="active">' . $active . '</li>';
