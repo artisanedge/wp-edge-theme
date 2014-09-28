@@ -7072,11 +7072,16 @@ article .comments-link {
   display: inline-block;
   margin-right: 1em; }
 
-.widget ul {
+.ad {
+  margin: 1em auto; }
+
+#secondary .widget ul {
   padding-left: 0;
   list-style: none; }
-  .widget ul li {
+  #secondary .widget ul li {
     margin-bottom: 0.8em; }
-  .widget ul ul {
+  #secondary .widget ul ul {
     padding-left: 20px;
     margin-top: 0.8em; }
+#secondary .ad {
+  text-align: center; }

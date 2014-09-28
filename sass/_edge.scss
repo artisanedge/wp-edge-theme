@@ -50,18 +50,29 @@ article {
 	}
 }
 
-.widget {
-	ul {
-		padding-left: 0;
-		list-style: none;
+.ad {
+	margin: 1em auto;
+}
 
-		li {
-			margin-bottom: 0.8em;
-		}
+#secondary {
 
+	.widget {
 		ul {
-			padding-left: 20px;
-			margin-top: 0.8em;
+			padding-left: 0;
+			list-style: none;
+
+			li {
+				margin-bottom: 0.8em;
+			}
+
+			ul {
+				padding-left: 20px;
+				margin-top: 0.8em;
+			}
 		}
+	}
+
+	.ad {
+		text-align: center;
 	}
 }
