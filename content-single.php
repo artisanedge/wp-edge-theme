@@ -26,6 +26,8 @@
 		?>
 	</div><!-- .entry-content -->
 
+	<?php get_template_part( 'ad' ); ?>
+
 	<footer class="entry-footer">
 		<?php edge_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
