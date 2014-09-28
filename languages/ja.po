@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: _s 1.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
 "POT-Creation-Date: 2012-11-12 01:30:16+00:00\n"
-"PO-Revision-Date: 2012-11-13 10:41+0900\n"
-"Language: JAPANESE\n"
+"PO-Revision-Date: 2014-09-29 05:11+0900\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: Naoko Takano <info@nao-net.com>\n"
+"Last-Translator: Kenichi Inoue <inoue@inoccu.net>\n"
 "Language-Team: \n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.6.6\n"
 
 #: 404.php:16
 msgid "Oops! That page can&rsquo;t be found."
@@ -66,7 +66,6 @@ msgstr "アーカイブ"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] "「%2$s」への1件のフィードバック"
-msgstr[1] "「%2$s」への%1$s件のフィードバック"
 
 #: comments.php:39 comments.php:59
 msgid "Comment navigation"
@@ -135,7 +134,8 @@ msgid "Permalink to %s"
 msgstr "「%s」へのパーマリンク"
 
 #: content.php:25
-msgid "Continue reading <span class=\"glyphicon glyphicon-chevron-right\"></span>"
+msgid ""
+"Continue reading <span class=\"glyphicon glyphicon-chevron-right\"></span>"
 msgstr "続きを読む <span class=\"glyphicon glyphicon-chevron-right\"></span>"
 
 #: content.php:38
@@ -451,3 +451,7 @@ msgstr "Automattic"
 #. Author URI of the plugin/theme
 msgid "http://automattic.com/"
 msgstr "http://automattic.com/"
+
+#: widget.php
+msgid "%1$s of \"%2$s\""
+msgstr "「%2$s」の%1$s"

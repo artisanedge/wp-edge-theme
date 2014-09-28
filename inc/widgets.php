@@ -6,18 +6,35 @@ class EdgeRecentPostsWidget extends WP_Widget {
 
 	function widget( $args, $instance ) {
 		extract( $args );
-		echo $before_widget;
-		if ( ! empty( $instance['title'] ) ) {
-			echo $before_title;
-			echo strip_tags( $instance['title'] );
-			echo $after_title;
-		}
-		echo "<ul>";
+
 		$num = 10;
 		if ( ! empty( $instance['num'] ) ) {
 			$num = $instance['num'];
 		}
-		$recent_posts = wp_get_recent_posts( array( 'numberposts' => $num, 'post_type' => 'post', 'post_status' => 'publish') );
+		$categorized = $instance['categorized'] ? true : false;
+
+		$title = strip_tags( $instance['title'] );
+		$recent_posts = array();
+		if ( $categorized ) {
+			if ( is_category() || is_single() ) {
+				$category = get_the_category();
+				$recent_posts = wp_get_recent_posts( array( 'numberposts' => $num, 'post_type' => 'post', 'post_status' => 'publish', 'category' => $category[0]->cat_ID) );
+				$title = sprintf( __( '%1$s of "%2$s"', 'edge' ), $title, $category[0]->cat_name );
+			} else {
+				$recent_posts = wp_get_recent_posts( array( 'numberposts' => $num, 'post_type' => 'post', 'post_status' => 'publish') );
+			}
+		} else {
+			$recent_posts = wp_get_recent_posts( array( 'numberposts' => $num, 'post_type' => 'post', 'post_status' => 'publish') );
+		}
+
+		echo $before_widget;
+		if ( ! empty( $instance['title'] ) ) {
+			echo $before_title;
+			echo $title;
+			echo $after_title;
+		}
+		echo "<ul>";
+
 		foreach ( $recent_posts as $post ) {
 ?>
 			<li>
@@ -50,6 +67,7 @@ class EdgeRecentPostsWidget extends WP_Widget {
 		$instance = $old_instance;
 		$instance['title'] = strip_tags( $new_instance['title'] );
 		$instance['num'] = is_numeric( $new_instance['num'] ) ? $new_instance['num'] : 10;
+		$instance['categorized'] = $new_instance['categorized'];
 		return $instance;
 	}
 
@@ -66,6 +84,10 @@ class EdgeRecentPostsWidget extends WP_Widget {
 			<label for="<?php echo $this->get_field_id('num'); ?>">Num:</label><br>
 			<input id="<?php echo $this->get_field_id('num'); ?>" name="<?php echo $this->get_field_name('num'); ?>" type="text" value="<?php echo esc_attr( $num ); ?>">
 		</p>
+		<p>
+			<input id="<?php echo $this->get_field_id('categorized'); ?>" name="<?php echo $this->get_field_name('categorized') ?>" type="checkbox" "<?php checked( $instance['categorized'], 'on' ); ?>">
+			<label for="<?php echo $this->get_field_id('categorized'); ?>">Categorized</label><br>
+		</p>	
 <?php
 	}
 }
