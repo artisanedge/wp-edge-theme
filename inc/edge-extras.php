@@ -1,5 +1,5 @@
 <?php
-function edge_breadcrumb( $post = false, $active = false ) {
+function edge_breadcrumb( $post = false, $active = false, $echo_active = false ) {
 	$str = '<ol class="breadcrumb">';
 	if ( is_multisite() ) {
 		$str .= '<li><a href="/">HOME</a></li>';
@@ -19,8 +19,12 @@ function edge_breadcrumb( $post = false, $active = false ) {
 		$child_category = $category;
 		while ( $child_category->category_parent ) {
 			$parent_category = get_category( $child_category->category_parent, false );
-			$category_str = '<li><a href="' . get_category_link( $parent_category->cat_ID ) . '">' . $parent_category->cat_name . '</a></li>';
-			array_push( $nodes, $category_str );
+			if ( $parent_category->cat_name == $active ) {
+				$nodes = array();
+			} else {
+				$category_str = '<li><a href="' . get_category_link( $parent_category->cat_ID ) . '">' . $parent_category->cat_name . '</a></li>';
+				array_push( $nodes, $category_str );
+			}
 			$child_category = $parent_category;
 		}
 	}
@@ -40,10 +44,12 @@ function edge_breadcrumb( $post = false, $active = false ) {
 		$str .= $node;
 	}
 
-	if ( $post ) {
-		$str .= '<li class="active">' . $post->post_title . '</li>';
-	} else if ( $active ) {
-		$str .= '<li class="active">' . $active . '</li>';
+	if ( $echo_active ) {
+		if ( $post ) {
+			$str .= '<li class="active">' . $post->post_title . '</li>';
+		} else if ( $active ) {
+			$str .= '<li class="active">' . $active . '</li>';
+		}
 	}
 
 	$str .= '</ol>';
