@@ -55,3 +55,32 @@ function edge_breadcrumb( $post = false, $active = false, $echo_active = false )
 	$str .= '</ol>';
 	echo apply_filters( 'edge_breadcrumb', $str, $post, $nodes );
 }
+
+function edge_the_terms( $post, $taxonomy, $echo = true, $container = 'div' ) {
+	$output = '';
+	$terms =  get_the_terms( $post->ID, $taxonomy );
+	foreach ( $terms as $term ) {
+		$output .= '<' . $container . ' class="' . $taxonomy . '-terms">';
+		$term_array = array();
+		array_push( $term_array, '<a href="' . get_term_link( $term->slug, $taxonomy ) . '" class="' . $taxonomy . '-term">' . $term->name . '</a>' );
+		while ( $term->parent != 0 ) {
+			$term = get_term( $term->parent, $taxonomy );
+			array_push( $term_array, '<a href="' . get_term_link( $term->slug, $taxonomy ) . '" class="' . $taxonomy . '-term">' . $term->name . '</a>' );
+		}
+		$first = true;
+		while ( $str = array_pop( $term_array ) ) {
+			if ( $first ) {
+				$first = false;
+			} else {
+				$output .= ' &gt; ';
+			}
+			$output .= $str;
+		}
+		$output .= '</' . $container . '>';
+	}
+	if ( $echo ) {
+		echo $output;
+	} else {
+		return $output;
+	}
+}
