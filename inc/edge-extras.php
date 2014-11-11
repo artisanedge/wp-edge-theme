@@ -84,3 +84,16 @@ function edge_the_terms( $post, $taxonomy, $echo = true, $container = 'div' ) {
 		return $output;
 	}
 }
+
+function edge_term_list( $taxonomy, $container_class = '', $parent = 0 ) {
+	$terms = get_terms( $taxonomy, array( 'parent' => $parent ) );
+	if ( count( $terms ) < 1 ) return;
+	echo '<ul class="' . $container_class . '">';
+	foreach ( $terms as $term ) {
+		echo '<li>';
+		echo '<a href="' . get_term_link( $term->slug, $taxonomy ) . '" class="' . $taxonomy . '-term">' . $term->name . '</a>';
+		edge_term_list( $taxonomy, '', intval( $term->term_id ), $output );
+		echo '</li>';
+	}
+	echo '</ul>';
+}
