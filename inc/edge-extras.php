@@ -62,10 +62,10 @@ function edge_the_terms( $post, $taxonomy, $echo = true, $container = 'div' ) {
 	foreach ( $terms as $term ) {
 		$output .= '<' . $container . ' class="' . $taxonomy . '-terms">';
 		$term_array = array();
-		array_push( $term_array, '<a href="' . get_term_link( $term->slug, $taxonomy ) . '" class="' . $taxonomy . '-term">' . $term->name . '</a>' );
+		array_push( $term_array, '<a href="' . get_term_link( $term->term_id, $taxonomy ) . '" class="' . $taxonomy . '-term">' . $term->name . '</a>' );
 		while ( $term->parent != 0 ) {
 			$term = get_term( $term->parent, $taxonomy );
-			array_push( $term_array, '<a href="' . get_term_link( $term->slug, $taxonomy ) . '" class="' . $taxonomy . '-term">' . $term->name . '</a>' );
+			array_push( $term_array, '<a href="' . get_term_link( $term->term_id, $taxonomy ) . '" class="' . $taxonomy . '-term">' . $term->name . '</a>' );
 		}
 		$first = true;
 		while ( $str = array_pop( $term_array ) ) {
@@ -91,7 +91,7 @@ function edge_term_list( $taxonomy, $container_class = '', $parent = 0 ) {
 	echo '<ul class="' . $container_class . '">';
 	foreach ( $terms as $term ) {
 		echo '<li>';
-		echo '<a href="' . get_term_link( $term->slug, $taxonomy ) . '" class="' . $taxonomy . '-term">' . $term->name . '</a>';
+		echo '<a href="' . get_term_link( intval($term->term_id), $taxonomy ) . '" class="' . $taxonomy . '-term">' . $term->name . '</a>';
 		edge_term_list( $taxonomy, '', intval( $term->term_id ), $output );
 		echo '</li>';
 	}
