@@ -7070,6 +7070,8 @@ article .entry-content {
     border-style: solid;
     border-width: 0 0 2px 0;
     padding: 0 0 0.5em 0.5em; }
+  article .entry-content h3:first-child {
+    margin-top: 1em; }
   article .entry-content h3:before {
     position: relative;
     top: 1px;
