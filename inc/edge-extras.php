@@ -97,3 +97,13 @@ function edge_term_list( $taxonomy, $container_class = '', $parent = 0 ) {
 	}
 	echo '</ul>';
 }
+
+function get_hierarchical_terms( $term, $taxonomy ) {
+	$terms = array();
+	while ( $term ) {
+		array_push( $terms, $term );
+		if ( ! $term->parent ) break;
+		$term = get_term( $term->parent, $taxonomy );
+	}
+	return $terms;
+}
