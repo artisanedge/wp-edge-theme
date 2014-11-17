@@ -3,7 +3,7 @@
 Theme Name: edge
 Theme URI: https://github.com/inoccu/wp-edge-theme
 Author: Kenichi Inoue
-Author URI: http://inoccu.net
+Author URI: http://artisanedge.jp
 Description: Hi. I'm a starter theme called <code>edge</code>, or <em>underscores</em>, if you like. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
 Version: 1.0
 License: GNU General Public License v2 or later
@@ -7037,6 +7037,9 @@ body.admin-bar .navbar-fixed-top {
 
 article .entry-header {
   margin-bottom: 1em; }
+  article .entry-header .entry-title {
+    font-size: 2em;
+    line-height: 1.5em; }
 article .entry-content {
   font-size: 1.2em;
   line-height: 1.8em;
@@ -7062,6 +7065,43 @@ article .entry-content {
     -webkit-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out; }
+  article .entry-content h3 {
+    margin: 2em 0 1em 0;
+    border-style: solid;
+    border-width: 0 0 2px 0;
+    padding: 0 0 0.5em 0.5em; }
+  article .entry-content h3:before {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 1.5em;
+    content: "\e067"; }
+  article .entry-content h4 {
+    margin: 2em 0 1em 0;
+    background-color: #d8d8d8;
+    padding: 8px 8px 8px 16px; }
+  article .entry-content .amazlet-box {
+    margin: 1.5em 0 !important;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding-top: 0.5em;
+    padding-left: 0.5em; }
+  article .entry-content .amazlet-image img {
+    margin-top: 0; }
+  article .entry-content .shareImg {
+    float: left;
+    margin: 0.5em; }
+  article .entry-content .shareURL {
+    font-size: 0.8em;
+    margin-top: -80px;
+    margin-bottom: 90px;
+    display: block; }
 article .entry-footer {
   margin-top: 1em; }
 article .posted-on,
@@ -7071,9 +7111,6 @@ article .tags-links,
 article .comments-link {
   display: inline-block;
   margin-right: 1em; }
-
-.ad {
-  margin: 1em auto; }
 
 #secondary .widget ul {
   padding-left: 0;
@@ -7085,3 +7122,9 @@ article .comments-link {
     margin-top: 0.8em; }
 #secondary .ad {
   text-align: center; }
+
+.ad {
+  margin: 1em auto; }
+
+.fa {
+  color: black !important; }

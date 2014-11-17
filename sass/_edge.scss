@@ -1,9 +1,20 @@
+//** Background color for `<body>`.
+$body-bg: #fff !default;
+//** Thumbnail background color
+$thumbnail-bg: $body-bg !default;
+//** Thumbnail border color
+$thumbnail-border: #ddd !default;
+
 article {
 	
 	.entry-header {
 		margin-bottom: 1em;
 
 		h2 {
+		}
+		.entry-title {
+			font-size: 2em;
+			line-height: 1.5em;
 		}
 		.entry-meta {
 		}
@@ -32,6 +43,50 @@ article {
 			border-radius: $thumbnail-border-radius;
 			@include transition(all .2s ease-in-out);
 		}
+		h3 {
+			margin: 2em 0 1em 0;
+			border-style: solid;
+			border-width: 0 0 2px 0;
+			padding: 0 0 0.5em 0.5em;
+		}
+		h3:before {
+			position: relative;
+			top: 1px;
+			display: inline-block;
+			font-family: 'Glyphicons Halflings';
+			font-style: normal;
+			font-weight: normal;
+			line-height: 1;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			width: 1.5em;
+			content: "\e067";
+		}
+		h4 {
+			margin: 2em 0 1em 0;
+			background-color: #d8d8d8;
+			padding: 8px 8px 8px 16px;
+		}
+		.amazlet-box {
+			margin: 1.5em 0 !important;
+			background-color: $thumbnail-bg;
+			border: 1px solid $thumbnail-border;
+			padding-top: 0.5em;
+			padding-left: 0.5em;
+		}
+		.amazlet-image img {
+			margin-top: 0;
+		}
+		.shareImg {
+			float: left;
+			margin: 0.5em;
+		}
+		.shareURL {
+			font-size: 0.8em;
+			margin-top: -80px;
+			margin-bottom: 90px;
+			display: block;
+		}
 	}
 
 	.entry-footer {
@@ -48,10 +103,6 @@ article {
 		display: inline-block;
 		margin-right: 1em;
 	}
-}
-
-.ad {
-	margin: 1em auto;
 }
 
 #secondary {
@@ -75,4 +126,12 @@ article {
 	.ad {
 		text-align: center;
 	}
+}
+
+.ad {
+	margin: 1em auto;
+}
+
+.fa {
+	color: black !important;
 }
