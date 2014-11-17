@@ -56,11 +56,12 @@ function edge_breadcrumb( $post = false, $active = false, $echo_active = false )
 	echo apply_filters( 'edge_breadcrumb', $str, $post, $nodes );
 }
 
-function edge_the_terms( $post, $taxonomy, $echo = true, $container = 'div' ) {
+function edge_the_terms( $post, $taxonomy, $echo = true, $container = 'div', $icon = false ) {
 	$output = '';
 	$terms =  get_the_terms( $post->ID, $taxonomy );
 	foreach ( $terms as $term ) {
 		$output .= '<' . $container . ' class="' . $taxonomy . '-terms">';
+		if ( $icon ) $output .= '<i class="glyphicon glyphicon-' . $icon . '"></i>&nbsp;';
 		$term_array = array();
 		array_push( $term_array, '<a href="' . get_term_link( $term->term_id, $taxonomy ) . '" class="' . $taxonomy . '-term">' . $term->name . '</a>' );
 		while ( $term->parent != 0 ) {
