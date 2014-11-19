@@ -24,7 +24,9 @@
 		?>
 	</div><!-- .entry-content -->
 
+	<?php if ( is_admin() ) : ?>
 	<footer class="entry-footer">
 		<?php edit_post_link( __( 'Edit', 'edge' ), '<span class="edit-link"><i class="glyphicon glyphicon-pencil"></i> ', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
+	<?php endif; ?>
 </article><!-- #post-## -->
