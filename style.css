@@ -7049,7 +7049,7 @@ article .entry-content {
     text-align: center;
     margin-right: auto;
     margin-left: auto; }
-  article .entry-content img {
+  article .entry-content img:not(.avatar) {
     display: block;
     width: 100% \9;
     max-width: 100%;
